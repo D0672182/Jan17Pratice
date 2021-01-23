@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Jan17Pratice.Models.car>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCar.cshtml"; //這個Index view檔 套用該LayoutCar.cshtml佈局檔
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")   <!--@@Html.方法是MVC的Html Helper,  ActionLink(產生Action路徑超連結)-->
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=> model.Id)    <!--@@Html.DisplayNameFor(顯示Table欄位標題名),  (model=> model.Id) Lamda表示式-->
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)  <!--DisplayFor()方法顯示資料列-->
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.brand)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.model)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
+}
+
+</table>
