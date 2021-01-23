@@ -18,7 +18,5 @@ namespace Jan17Pratice.Models
         public double hp { get; set; }
         [Display(Name ="建議售價")]
         public double price { get; set; }
-        [Display(Name = "車型")]
-        public string classification { get; set; }
-        }
     }
+ }

@@ -10,7 +10,7 @@ using Jan17Pratice.Models;
 
 namespace Jan17Pratice.Controllers
 {
-    public class carsController : Controller
+    public class carsNewController : Controller
     {
         private carContext db = new carContext();   //初始化EntityFramework的DbContext
 
@@ -21,7 +21,7 @@ namespace Jan17Pratice.Controllers
         }
 
         // GET: cars/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult carsDetails(int? id)
         {
             if (id == null)
             {
